@@ -1,0 +1,242 @@
+{
+    "pokemones": [
+        {
+            "id": 1,
+            "nombre": "bulbasaur",
+            "imagen": "/images/bulbasaur.png",
+            "tipo": [
+                "grass",
+                "poison"
+            ],
+            "peso": "60,0 kg",
+            "altura": "0,7 m",
+            "movimientos": [
+                "Chlorophyll",
+                "Overgrow"
+            ],
+            "descripcion": "There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger.",
+            "estadisticas": {
+                "HP": 45,
+                "ATK": 49,
+                "DEF": 49,
+                "SATK": 65,
+                "SDEF": 65,
+                "SPD": 45
+            },
+            "color": {
+                "grass": "74CB48",
+                "poison": "#A43E9E"
+            }
+        },
+        {
+            "id": 4,
+            "nombre": "charmander",
+            "imagen": "/images/charmander.png",
+            "tipo": [
+                "fire"
+            ],
+            "peso": "8,5 kg",
+            "altura": "0,6 m",
+            "movimientos": [
+                "Mega-Punch ",
+                "Fire-Punch"
+            ],
+            "descripcion": "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
+            "estadisticas": {
+                "HP": 39,
+                "ATK": 52,
+                "DEF": 43,
+                "SATK": 60,
+                "SDEF": 50,
+                "SPD": 65
+            },
+            "color": {
+                "fire": "#F57D31"
+            }
+        },
+        {
+            "id": 7,
+            "nombre": "Squirtle",
+            "imagen": "/images/squirtle.png",
+            "tipo": [
+                "water"
+            ],
+            "peso": "9,0 kg",
+            "altura": "0,5 m",
+            "movimientos": [
+                "Torrent",
+                "Rain-Dish"
+            ],
+            "descripcion": "When it retracts its long neck into its shell, it squirts out water with figorous force.",
+            "estadisticas": {
+                "HP": 44,
+                "ATK": 48,
+                "DEF": 65,
+                "SATK": 50,
+                "SDEF": 64,
+                "SPD": 43
+            },
+            "color": {
+                "water": "#6493EB"
+            }
+        },
+        {
+            "id": 12,
+            "nombre": "Butterfree",
+            "imagen": "/images/butterfree.png",
+            "tipo": [
+                "bug",
+                "flying"
+            ],
+            "peso": "32,0 kg",
+            "altura": "1,1 m",
+            "movimientos": [
+                "Compound-Eyes",
+                "Tinted-Lens"
+            ],
+            "descripcion": "In battle, it flaps its wings at great speed to release highly toxic dust into the air.",
+            "estadisticas": {
+                "HP": 60,
+                "ATK": 45,
+                "DEF": 50,
+                "SATK": 90,
+                "SDEF": 80,
+                "SPD": 70
+            },
+            "color": {
+                "bug": "#A7B723",
+                "flying": "#A891EC"
+            }
+        },
+        {
+            "id": 25,
+            "nombre": "Pikachu",
+            "imagen": "/images/pikachu.png",
+            "tipo": [
+                "electric"
+            ],
+            "peso": "6,0 kg",
+            "altura": "0,4 m",
+            "movimientos": [
+                "Mega-Punch",
+                "Pay-Day"
+            ],
+            "descripcion": "Pikachu that can generate powerful electricity have cheek sacs that are soft and super stretchy.",
+            "estadisticas": {
+                "HP": 35,
+                "ATK": 55,
+                "DEF": 40,
+                "SATK": 50,
+                "SDEF": 50,
+                "SPD": 90
+            },
+            "color": {
+                "electric": "#F9CF30"
+            }
+        },
+        {
+            "id": 92,
+            "nombre": "Gastly",
+            "imagen": "/images/gastly.png",
+            "tipo": [
+                "ghost"
+            ],
+            "peso": "0,1 kg",
+            "altura": "1,3 m",
+            "movimientos": [
+                "Levitate"
+            ],
+            "descripcion": "Born from gases, anyone would faint if engulfed by its gaseous body, which contains poison.",
+            "estadisticas": {
+                "HP": 30,
+                "ATK": 35,
+                "DEF": 30,
+                "SATK": 100,
+                "SDEF": 35,
+                "SPD": 80
+            },
+            "color": {
+                "ghost": "#70559B"
+            }
+        },
+        {
+            "id": 132,
+            "nombre": "Ditto",
+            "imagen": "/images/ditto.png",
+            "tipo": [
+                "normal"
+            ],
+            "peso": "4,0 kg",
+            "altura": "0,3 m",
+            "movimientos": [
+                "Limber",
+                "Imposter"
+            ],
+            "descripcion": "It can reconstitute its entire cellular struture to change into what it sees, but it returns to normal when it relaxes.",
+            "estadisticas": {
+                "HP": 48,
+                "ATK": 48,
+                "DEF": 48,
+                "SATK": 48,
+                "SDEF": 48,
+                "SPD": 48
+            },
+            "color": {
+                "normal": "#AAA67F"
+            }
+        },
+        {
+            "id": 152,
+            "nombre": "Mew",
+            "imagen": "/images/mew.png",
+            "tipo": [
+                "psychic"
+            ],
+            "peso": "4,0 kg",
+            "altura": "0,4 m",
+            "movimientos": [
+                "Synchronize"
+            ],
+            "descripcion": "When viewed through a microscope, this Pokemon's short, fine, delicate hair can be seen.",
+            "estadisticas": {
+                "HP": 100,
+                "ATK": 100,
+                "DEF": 100,
+                "SATK": 100,
+                "SDEF": 100,
+                "SPD": 100
+            },
+            "color": {
+                "psychic": "#FB5584"
+            }
+        },
+        {
+            "id": 304,
+            "nombre": "Aron",
+            "imagen": "/images/aron.png",
+            "tipo": [
+                "steel",
+                "rock"
+            ],
+            "peso": "60,0 kg",
+            "altura": "0,4 m",
+            "movimientos": [
+                "Sturdy",
+                "Rock-Head"
+            ],
+            "descripcion": "It eats iron ore - and sometimes railroald tracks - to build up the steel armor that protects its body.",
+            "estadisticas": {
+                "HP": 50,
+                "ATK": 70,
+                "DEF": 100,
+                "SATK": 40,
+                "SDEF": 40,
+                "SPD": 30
+            },
+            "color": {
+                "steel": "#B7B9D0",
+                "rock": "#B69E31"
+            }
+        }
+    ]
+}
