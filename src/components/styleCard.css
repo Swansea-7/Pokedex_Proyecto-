@@ -27,8 +27,49 @@
 
 .window {
     min-width: 390px;
-    min-height: 844px;
+    /* min-height: 844px; */
     width: 414px;
-    height: 915px;
+    /* height: 915px; */
     background-color: var(--background);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+    place-items: center;
+}
+
+.card {
+    width: 125px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkGray);
+    border-radius: 16px;
+}
+
+.picture {
+    width: 70px;
+    height: 70px;
+}
+
+.color {
+    color: var(--darkGray);
+}
+
+.containerwhite {
+    width: 120px;
+    height: 105px;
+    border-top: 1px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: var(--background);
+}
+
+.containercolor {
+    color: var(--background);
 }

@@ -9,13 +9,13 @@ function Card(props) {
     };
 
     return (
-        <div className="window">
-            {props.pokemoness.map((pokemon) => {
+        <div className="window card-grid">
+            {props.pokemones.map((pokemon) => {
                 return (
-                    <div className="card picture color" onChange={() => toggleDetails(pokemon)}>
+                    <div name="card" className="card" onChange={() => toggleDetails(pokemon)}>
                         <div className="containerwhite">
-                            <div><h3>#{pokemon.id}</h3></div>
-                            <div><img src={pokemon.foto} alt="pokemon.id" /></div>
+                            <div><h3 className="color">#{pokemon.id}</h3></div>
+                            <div><img className="picture" src={pokemon.imagen} alt={pokemon.nombre} /></div>
                         </div>
                         <div className="containercolor">
                             <div><h2>{pokemon.nombre}</h2></div>
