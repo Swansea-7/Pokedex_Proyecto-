@@ -24,11 +24,3 @@
     --white: #FFFFFF;
     --background: #F7F7F7;
 }
-
-.window {
-    min-width: 390px;
-    min-height: 844px;
-    width: 414px;
-    height: 915px;
-    background-color: var(--background);
-}

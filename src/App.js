@@ -1,24 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 import "./App.css";
-import List from "./components/List";
-import Card from "./components/Card";
-import Details from "./components/Details";
+import Search from "./components/Search";
+import Cards from "./components/Cards";
+
 
 function App() {
 
   const [pokemones, setPokemones] = useState([])
 
   const [flag, setFlag] = useState(false)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/pokemones", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((response) => setPokemones(response))
-      .catch((err) => console.error(err));
-  }, [flag]);
 
   const buscar = (nombre) => {
     if (nombre == "") {
@@ -32,19 +23,20 @@ function App() {
     }
   }
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [pokemonSelect, setPokemonSelect] = useState({})
+  useEffect(() => {
+    callApi()
+  }, [flag]);
 
-  const open = (pokemon) => {
-    setPokemonSelect(pokemon);
-    setIsOpen(!isOpen);
-  };
-
-  const close = () => {
-    setIsOpen(false);
+  const callApi = () => {
+    fetch("http://localhost:3000/pokemones", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((response) => setPokemones(response))
+      .catch((err) => console.error(err));
   }
 
-  const sortByLetter = () => {
+  const sortAB = () => {
     let pokemonesOrdenados = [...pokemones].sort((a, b) => {
       if (a.nombre > b.nombre) return 1
       if (a.nombre < b.nombre) return -1
@@ -53,7 +45,7 @@ function App() {
     setPokemones(pokemonesOrdenados)
   }
 
-  const sortByNumber = () => {
+  const sort12 = () => {
     let pokemonesPorId = [...pokemones].sort((a, b) => {
       if (a.id > b.id) return 1
       if (a.id < b.id) return -1
@@ -64,9 +56,8 @@ function App() {
 
   return (
     <>
-      <List buscar={buscar} ordenarNumero={sortByNumber} ordenarLetra={sortByLetter} />
-      <Card pokemones={pokemones} open={open} />
-      {isOpen && <Details pokemon={pokemonSelect} close={close} />}
+      <Search buscar={buscar} sort12={sort12} sortAB={sortAB} />
+      <Cards pokemones={pokemones} />
     </>
   );
 }

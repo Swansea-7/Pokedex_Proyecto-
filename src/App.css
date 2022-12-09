@@ -6,6 +6,14 @@
     font-family: 'Poppins';
 }
 
+.window {
+    min-width: 390px;
+    min-height: 844px;
+    width: 414px;
+    /* height: 915px; */
+    background-color: var(--background);
+}
+
 @media (min-width: 399px) {
     body {
         display: flex;

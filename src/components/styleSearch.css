@@ -25,12 +25,14 @@
     --background: #F7F7F7;
 }
 
-.window {
-    min-width: 390px;
-    min-height: 844px;
+.container {
     width: 414px;
-    height: 915px;
     background-color: var(--background);
+}
+
+.containersearch {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .search {
@@ -50,6 +52,21 @@
 
 .innersearch .inputsearch {
     padding-left: 40px;
-    width: 300px;
+    width: 380px;
     height: 50px;
+    border-radius: 16px;
+}
+
+.headerlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 390px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 208px;
+    margin: 16px;
 }

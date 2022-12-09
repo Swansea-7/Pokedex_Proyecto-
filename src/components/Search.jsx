@@ -1,29 +1,29 @@
 import React from "react";
 
-import "./styleList.css";
+import "./styleSearch.css";
 
-function List(props) {
+function Search(props) {
 
     const onChangeBusqueda = (e) => {
         props.buscar(e.target.value)
     }
 
-    const ordenar12 = () => {
-        props.ordenarNumero()
+    const ordenarAB = () => {
+        props.sortAB()
     }
 
-    const ordenarAB = () => {
-        props.ordenarLetra()
+    const ordenar12 = () => {
+        props.sort12()
     }
 
     return (
-        <div className="window">
+        <div className="container">
             <div className="headerlist">
-                <div>
+                <div className="logo">
                     <div><img src="images/pokeball.svg" alt="pokeball" /></div>
                     <div><h1>Pokedex</h1></div>
                 </div>
-                <div>
+                <div className="btn-grupo-ordenar">
                     <button><img src="/images/sort-0-9.svg" alt="orden#" onClick={ordenar12} /></button>
                     <button><img src="/images/sort-a-z.svg" alt="ordenAB" onClick={ordenarAB} /></button>
                 </div>
@@ -34,13 +34,8 @@ function List(props) {
                     <input type="text" className="inputsearch" name="search" placeholder="Search" onChange={onChangeBusqueda} />
                 </div>
             </div>
-            {props.pokemones == "" && (
-                <div className="containerlist">
-                    <p>Oooppss, parece que no hay elementos por aqui</p>
-                </div>
-            )}
         </div>
     );
 }
 
-export default List;
+export default Search;
