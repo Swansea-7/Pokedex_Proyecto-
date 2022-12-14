@@ -16,7 +16,7 @@ function App() {
       setFlag(!flag)
     }
     else {
-      let pokemon = pokemones.filter((pokemon) => {
+      let pokemon = pokemones.map((pokemon) => {
         return pokemon.nombre.toLowerCase().includes(nombre.toLowerCase());
       });
       setPokemones(pokemon)

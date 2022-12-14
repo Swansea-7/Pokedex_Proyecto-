@@ -1,24 +1,20 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./styleCards.css";
 
 function Cards(props) {
 
-    const { idPokemon } = useParams();
 
-    const pokemon = props.pokemones.find((pokemon) => {
-        return pokemon.id == idPokemon;
-    });
 
     return (
-        <div className="window" id="card-grid">
+        <div className="window card-grid">
             {props.pokemones.map((pokemonCard) => {
                 return (
-                    <div name="card" className="card ">
-                        <Link to={`/Details/${pokemonCard.id}`}>
+                    <div name="card" id="card" className={`${pokemonCard.tipo[0]}`} >
+                        <Link className="enlace" to={`/Details/${pokemonCard.id}`}>
                             <div className="containerwhite">
-                                <div><h3 className="color">#{pokemonCard.id}</h3></div>
+                                <div className="pokemonid"><h3 className={'id' + `${pokemonCard.tipo[0]}`}>#{pokemonCard.id}</h3></div>
 
                                 <div><img className="picture" src={pokemonCard.imagen} alt={pokemonCard.nombre} /></div>
                             </div>

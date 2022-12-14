@@ -25,40 +25,209 @@
     --background: #F7F7F7;
 }
 
-#card-grid {
+.rock {
+    background-color: var(--rock);
+}
+
+.idrock {
+    color: var(--rock);
+}
+
+.ghost {
+    background-color: var(--ghost);
+}
+
+.idghost {
+    color: var(--ghost);
+}
+
+.steel {
+    background-color: var(--steel);
+}
+
+.idsteel {
+    color: var(--steel);
+}
+
+.water {
+    background-color: var(--water);
+}
+
+.idwater {
+    color: var(--water);
+}
+
+.grass {
+    background-color: var(--grass);
+}
+
+.idgrass {
+    color: var(--grass);
+}
+
+.psychic {
+    background-color: var(--psychic);
+}
+
+.idpsychic {
+    color: var(--psychic);
+}
+
+.ice {
+    background-color: var(--ice);
+}
+
+.idice {
+    color: var(--ice);
+}
+
+.dark {
+    background-color: var(--dark);
+}
+
+.iddark {
+    color: var(--dark);
+}
+
+.fairy {
+    background-color: var(--fairy);
+}
+
+.idfairy {
+    color: var(--fairy);
+}
+
+.normal {
+    background-color: var(--normal);
+}
+
+.idnormal {
+    color: var(--normal);
+}
+
+.fighting {
+    background-color: var(--fighting);
+}
+
+.idfighting {
+    color: var(--fighting);
+}
+
+.flying {
+    background-color: var(--flying);
+}
+
+.idflying {
+    color: var(--flying);
+}
+
+.poison {
+    background-color: var(--poison);
+}
+
+.idpoison {
+    color: var(--poison);
+}
+
+.ground {
+    background-color: var(--ground);
+}
+
+.idgound {
+    color: var(--ground);
+}
+
+.bug {
+    background-color: var(--bug);
+}
+
+.idbug {
+    color: var(--bug);
+}
+
+.fire {
+    background-color: var(--fire);
+}
+
+.idfire {
+    color: var(--fire);
+}
+
+.electric {
+    background-color: var(--electric);
+}
+
+.idelectric {
+    color: var(--electric);
+}
+
+.dragon {
+    background-color: var(--dragon);
+}
+
+.iddragon {
+    color: var(--dragon);
+}
+
+
+.window {
+    min-width: 390px;
+    min-height: 844px;
+    width: 414px;
+    /* height: 915px; */
+    background-color: var(--background);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+    grid-auto-rows: min-content;
     row-gap: 16px;
     column-gap: 16px;
     place-items: center;
     padding: 16px;
 }
 
-.card {
+#card {
     margin-top: 24px;
-    width: 125px;
+    width: 115px;
     height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--darkGray);
     border-radius: 16px;
 }
 
 .picture {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
 }
 
-.color {
-    color: var(--darkGray);
+.enlace {
+    text-decoration: none;
+    list-style: none;
+}
+
+.pokemonid {
+    width: 105px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.75rem;
+    padding-right: 9px;
+    padding-top: 9px;
 }
 
 .containerwhite {
-    width: 120px;
-    height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 95px;
     border-top: 1px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -66,5 +235,13 @@
 }
 
 .containercolor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--background);
+}
+
+.containercolor>div>h2 {
+    font-size: 0.80rem;
+    margin-top: 6px;
 }

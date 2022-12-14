@@ -6,21 +6,13 @@
     font-family: 'Poppins';
 }
 
-.window {
-    min-width: 390px;
-    min-height: 844px;
-    width: 414px;
-    /* height: 915px; */
-    background-color: var(--background);
-}
-
 @media (min-width: 399px) {
     body {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 10rem;
-        background: rgb(249, 207, 48);
-        background: radial-gradient(circle, rgba(249, 207, 48, 1) 0%, rgba(116, 203, 72, 1) 46%, rgba(100, 147, 235, 1) 100%);
+        /* background: rgb(249, 207, 48);
+        background: radial-gradient(circle, rgba(249, 207, 48, 1) 0%, rgba(116, 203, 72, 1) 46%, rgba(100, 147, 235, 1) 100%); */
     }
 }

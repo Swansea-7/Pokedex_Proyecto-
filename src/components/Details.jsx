@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import "./styleDetails.css";
 
@@ -7,9 +7,13 @@ function Details() {
 
     const { idPokemon } = useParams();
 
-    const [pokemon, setPokemon] = useState([])
+    const [pokemon, setPokemon] = useState()
 
     const [pokemones, setPokemones] = useState([])
+
+    /* const [cambiarColor, setCambiarColor] = useState()
+
+    const [colorLeido, setColorLeido] = useState("") */
 
     const callApi = () => {
         fetch("http://localhost:3000/pokemones", {
@@ -35,76 +39,123 @@ function Details() {
         getPokemonDetail()
     }, [pokemones]);
 
-    console.log(pokemon)
+    /* const traerColor = () => {
+        const colorTipo = pokemon.tipo.length((tipoPokemon) => {
+            return colorTipo = tipoPokemon[0]
+        })
+        setColorLeido(colorTipo)
+    }
+
+    const handleColor = (colorLeido) => {
+        const colorAsignado = pokemones.map((pokemon) => {
+            if (pokemon.color === colorLeido) {
+                return { ...pokemon, color: colorLeido };
+            }
+            return pokemon;
+        })
+        setCambiarColor(colorAsignado)
+    } */
 
     return (
-        <div className="window">
-            <div><img src="/images/Pokeball.png" alt="pokeball" /></div>
-            <div className="card picture color">
+        <div id="windowDetail" className={`${pokemon?.tipo[0]}`}>
+            <div className="pokeball"><img src="/images/Pokeball.png" alt="pokeball" /></div>
+            <div className="detail">
                 <div className="headerdetails">
-                    <div><img src="/images/arrow-back.svg" alt="atras" /></div>
+                    <Link to={`/`}>
+                        <div>
+                            <img src="/images/arrow-back.svg" alt="atras" />
+                        </div>
+                    </Link>
                     <div>
-                        <h1>{pokemon.nombre}</h1>
+                        <h1>{pokemon?.nombre}</h1>
                     </div>
                     <div>
-                        <h4>#{pokemon.id}</h4>
+                        <h4>#{pokemon?.id}</h4>
                     </div>
                 </div>
                 <div className="profile">
-                    <div><img src="/images/chevron-left.svg" alt="izquierda" /></div>
-                    <div><img src={pokemon.imagen} alt={pokemon.nombre} /></div>
-                    <div><img src="/images/chevron-right.svg" alt="derecha" /></div>
-                    <div><button>TYPE</button></div>
-                    <div className="about">
-                        <h3>About</h3>
+
+                    <Link to={`/Details/${pokemon?.id}`}>
                         <div>
-                            <div>
-                                <div><img src="/images/Weight.svg" alt="peso" /></div>
-                                <div><p>{pokemon.peso}</p></div>
-                                <div><p>Weight</p></div>
+                            <img src="/images/chevron-left.svg" alt="izquierda" />
+                        </div>
+                    </Link>
+                    <div>
+                        <img src={pokemon?.imagen} alt={pokemon?.nombre} />
+                    </div>
+                    <Link to={`/Details/${pokemon?.id}`}>
+                        <div>
+                            <img src="/images/chevron-right.svg" alt="derecha" />
+                        </div>
+                    </Link>
+
+                </div>
+                <div className="types">
+                    {pokemon?.tipo.map((item) => {
+                        return (
+                            <div id="type" className={`${pokemon?.tipo[0]} ${pokemon?.tipo[1]}`}>
+                                <label>{item}</label>
                             </div>
-                            <br />
-                            <div>
-                                <div><img src="/images/Height.svg" alt="altura" /></div>
-                                <div><p>{pokemon.altura}</p></div>
-                                <div><p>Height</p></div>
-                            </div>
-                            <br />
-                            <div>
-                                <div><p>{pokemon.movimientos}</p></div>
-                                <div><p>Moves</p></div>
-                            </div>
+                        );
+                    })}
+                </div>
+                <div className="about">
+                    <h3 className={'id' + `${pokemon?.tipo[0]}`}>About</h3>
+                    <div className="resume">
+                        <div className="weight">
+                            <div><img src="/images/Weight.svg" alt="peso" /></div>
+                            <div><p>{pokemon?.peso}</p></div>
+                            <div><span>Weight</span></div>
+                        </div>
+                        <div className="line1"></div>
+                        <div className="height">
+                            <div><img src="/images/Height.svg" alt="altura" /></div>
+                            <div><p>{pokemon?.altura}</p></div>
+                            <div><span>Height</span></div>
+                        </div>
+                        <div className="line1"></div>
+                        <div className="moves">
+                            {pokemon?.movimientos.map((item) => {
+                                return (
+                                    <>
+                                        <div><p>{item}</p></div>
+                                    </>
+                                );
+                            })}
+                            <div><span>Moves</span></div>
                         </div>
                     </div>
-                    <div className="description">
-                        <p>{pokemon.descripcion}</p>
-                    </div>
-                    <div className="stats">
-                        <h3>Base Stats</h3>
-                        <div>
-                            <div>
-                                <h4>HP</h4>
-                                <h4>ATK</h4>
-                                <h4>DEF</h4>
-                                <h4>SATK</h4>
-                                <h4>SDEF</h4>
-                                <h4>SPD</h4>
-                            </div>
-                            <br />
-                            <div>
-                                <label>{pokemon.estadisticas.hp}</label>
-                                <input type="range" min={0} max={100} className="range" step={1} value={pokemon.estadisticas.hp}></input>
-                                <label>{pokemon.estadisticas.atk}</label>
-                                <input type="range" min={0} max={100} className="range" step={1} value={pokemon.estadisticas.atk}></input>
-                                <label>{pokemon.estadisticas.def}</label>
-                                <input type="range" min={0} max={100} className="range" step={1} value={pokemon.estadisticas.def}></input>
-                                <label>{pokemon.estadisticas.satk}</label>
-                                <input type="range" min={0} max={100} className="range" step={1} value={pokemon.estadisticas.satk}></input>
-                                <label>{pokemon.estadisticas.sdef}</label>
-                                <input type="range" min={0} max={100} className="range" step={1} value={pokemon.estadisticas.sdef}></input>
-                                <label>{pokemon.estadisticas.spd}</label>
-                                <input type="range" min={0} max={100} className="range" step={1} value={pokemon.estadisticas.spd}></input>
-                            </div>
+                </div>
+                <div className="description">
+                    <p>{pokemon?.descripcion}</p>
+                </div>
+                <div className="stats">
+                    <h3 className={'id' + `${pokemon?.tipo[0]}`}>Base Stats</h3>
+                    <div className="containerstats">
+                        <div className="subtitle">
+                            <h4 className={'id' + `${pokemon?.tipo[0]}`}>HP</h4>
+                            <h4 className={'id' + `${pokemon?.tipo[0]}`}>ATK</h4>
+                            <h4 className={'id' + `${pokemon?.tipo[0]}`}>DEF</h4>
+                            <h4 className={'id' + `${pokemon?.tipo[0]}`}>SATK</h4>
+                            <h4 className={'id' + `${pokemon?.tipo[0]}`}>SDEF</h4>
+                            <h4 className={'id' + `${pokemon?.tipo[0]}`}>SPD</h4>
+                        </div>
+                        <div className="line2"></div>
+                        <div className="inputs">
+                            <label>{pokemon?.estadisticas.hp}</label>
+                            <label>{pokemon?.estadisticas.atk}</label>
+                            <label>{pokemon?.estadisticas.def}</label>
+                            <label>{pokemon?.estadisticas.satk}</label>
+                            <label>{pokemon?.estadisticas.sdef}</label>
+                            <label>{pokemon?.estadisticas.spd}</label>
+                        </div>
+                        <div className="ranges">
+                            <input type="range" min={0} max={100} className={`${pokemon?.tipo[0]}`} step={1} value={pokemon?.estadisticas.hp}></input>
+                            <input type="range" min={0} max={100} className={`${pokemon?.tipo[0]}`} step={1} value={pokemon?.estadisticas.atk}></input>
+                            <input type="range" min={0} max={100} className={`${pokemon?.tipo[0]}`} step={1} value={pokemon?.estadisticas.def}></input>
+                            <input type="range" min={0} max={100} className={`${pokemon?.tipo[0]}`} step={1} value={pokemon?.estadisticas.satk}></input>
+                            <input type="range" min={0} max={100} className={`${pokemon?.tipo[0]}`} step={1} value={pokemon?.estadisticas.sdef}></input>
+                            <input type="range" min={0} max={100} className={`${pokemon?.tipo[0]}`} step={1} value={pokemon?.estadisticas.spd}></input>
                         </div>
                     </div>
                 </div>
