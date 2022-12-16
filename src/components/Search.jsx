@@ -19,11 +19,11 @@ function Search(props) {
     }
 
     const handleSortABClick = () => {
-        return setIsSelected = false
+        setIsSelected(false)
     }
 
     const handleSort12Click = () => {
-        return setIsSelected = true
+        setIsSelected(true)
     }
 
     let button;
@@ -41,9 +41,6 @@ function Search(props) {
                     <div><h1>Pokedex</h1></div>
                 </div>
                 <div className="btn-grupo-ordenar">
-
-                    {/* <button><img src="/images/sort-0-9.svg" alt="orden#" onClick={ordenar12} /></button>
-                    <button><img src="/images/sort-a-z.svg" alt="ordenAB" onClick={ordenarAB} /></button> */}
                     {button}
                 </div>
             </div>
