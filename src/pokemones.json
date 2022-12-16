@@ -23,12 +23,13 @@
                 "sdef": 65,
                 "spd": 45
             },
-            "color": {
-                "grass": "#74CB48"
-            }
+            "color": [
+                "#74CB48",
+                "#A43E9E"
+            ]
         },
         {
-            "id": 4,
+            "id": 2,
             "nombre": "Charmander",
             "imagen": "/images/charmander.png",
             "tipo": [
@@ -49,12 +50,12 @@
                 "sdef": 50,
                 "spd": 65
             },
-            "color": {
-                "fire": "#F57D31"
-            }
+            "color": [
+                "#F57D31"
+            ]
         },
         {
-            "id": 7,
+            "id": 3,
             "nombre": "Squirtle",
             "imagen": "/images/squirtle.png",
             "tipo": [
@@ -75,12 +76,12 @@
                 "sdef": 64,
                 "spd": 43
             },
-            "color": {
-                "water": "#6493EB"
-            }
+            "color": [
+                "#6493EB"
+            ]
         },
         {
-            "id": 12,
+            "id": 4,
             "nombre": "Butterfree",
             "imagen": "/images/butterfree.png",
             "tipo": [
@@ -102,12 +103,12 @@
                 "sdef": 80,
                 "spd": 70
             },
-            "color": {
-                "bug": "#A7B723"
-            }
+            "color": [
+                "#A7B723"
+            ]
         },
         {
-            "id": 25,
+            "id": 5,
             "nombre": "Pikachu",
             "imagen": "/images/pikachu.png",
             "tipo": [
@@ -128,12 +129,12 @@
                 "sdef": 50,
                 "spd": 90
             },
-            "color": {
-                "electric": "#F9CF30"
-            }
+            "color": [
+                "#F9CF30"
+            ]
         },
         {
-            "id": 92,
+            "id": 6,
             "nombre": "Gastly",
             "imagen": "/images/gastly.png",
             "tipo": [
@@ -153,12 +154,12 @@
                 "sdef": 35,
                 "spd": 80
             },
-            "color": {
-                "ghost": "#70559B"
-            }
+            "color": [
+                "#70559B"
+            ]
         },
         {
-            "id": 132,
+            "id": 7,
             "nombre": "Ditto",
             "imagen": "/images/ditto.png",
             "tipo": [
@@ -179,12 +180,12 @@
                 "sdef": 48,
                 "spd": 48
             },
-            "color": {
-                "normal": "#AAA67F"
-            }
+            "color": [
+                "#AAA67F"
+            ]
         },
         {
-            "id": 152,
+            "id": 8,
             "nombre": "Mew",
             "imagen": "/images/mew.png",
             "tipo": [
@@ -204,12 +205,12 @@
                 "sdef": 100,
                 "spd": 100
             },
-            "color": {
-                "psychic": "#FB5584"
-            }
+            "color": [
+                "#FB5584"
+            ]
         },
         {
-            "id": 304,
+            "id": 9,
             "nombre": "Aron",
             "imagen": "/images/aron.png",
             "tipo": [
@@ -231,9 +232,10 @@
                 "sdef": 40,
                 "spd": 30
             },
-            "color": {
-                "steel": "#B7B9D0"
-            }
+            "color": [
+                "#B7B9D0",
+                "#B69E31"
+            ]
         }
     ]
 }

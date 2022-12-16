@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./styleSearch.css";
 
 function Search(props) {
+
+    const [isSelected, setIsSelected] = useState(true)
 
     const onChangeBusqueda = (e) => {
         props.buscar(e.target.value)
@@ -16,6 +18,21 @@ function Search(props) {
         props.sort12()
     }
 
+    const handleSortABClick = () => {
+        return setIsSelected = false
+    }
+
+    const handleSort12Click = () => {
+        return setIsSelected = true
+    }
+
+    let button;
+
+    if (isSelected) {
+        button = <button onClick={handleSortABClick}><img src="/images/sort-a-z.svg" alt="ordenAB" onClick={ordenarAB} /></button>;
+    } else if (!isSelected) {
+        button = <button onClick={handleSort12Click}><img src="/images/sort-0-9.svg" alt="orden#" onClick={ordenar12} /></button>;
+    }
     return (
         <div className="container">
             <div className="headerlist">
@@ -24,8 +41,10 @@ function Search(props) {
                     <div><h1>Pokedex</h1></div>
                 </div>
                 <div className="btn-grupo-ordenar">
-                    <button><img src="/images/sort-0-9.svg" alt="orden#" onClick={ordenar12} /></button>
-                    <button><img src="/images/sort-a-z.svg" alt="ordenAB" onClick={ordenarAB} /></button>
+
+                    {/* <button><img src="/images/sort-0-9.svg" alt="orden#" onClick={ordenar12} /></button>
+                    <button><img src="/images/sort-a-z.svg" alt="ordenAB" onClick={ordenarAB} /></button> */}
+                    {button}
                 </div>
             </div>
             <div className="containersearch">

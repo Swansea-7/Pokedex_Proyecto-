@@ -11,8 +11,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 10rem;
+        margin-top: 2rem;
         /* background: rgb(249, 207, 48);
         background: radial-gradient(circle, rgba(249, 207, 48, 1) 0%, rgba(116, 203, 72, 1) 46%, rgba(100, 147, 235, 1) 100%); */
+        background-image: url(/public/images/background.svg);
     }
 }

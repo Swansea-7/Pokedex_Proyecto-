@@ -72,3 +72,10 @@
     width: 208px;
     margin: 16px;
 }
+
+button {
+    border-style: none;
+    background: none;
+    width: 44px;
+    height: 44px;
+}

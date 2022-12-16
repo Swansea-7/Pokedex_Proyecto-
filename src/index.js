@@ -11,6 +11,7 @@ import Details from './components/Details';
 import Cards from './components/Cards';
 import ErrorPage from "./routes/error-page";
 import reportWebVitals from './reportWebVitals';
+import Carrousel from './components/Carrousel';
 
 const router = createBrowserRouter([
   {
@@ -19,16 +20,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "Search",
-    element: <Search />,
+    path: "Cards",
+    element: <Cards />,
+  },
+
+  {
+    path: "Carrousel",
+    element: <Carrousel />,
   },
   {
     path: "Details/:idPokemon",
     element: <Details />,
-  },
-  {
-    path: "Cards",
-    element: <Cards />,
   },
 ]);
 

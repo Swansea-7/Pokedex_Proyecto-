@@ -56,6 +56,24 @@ function Details() {
         setCambiarColor(colorAsignado)
     } */
 
+    /* const [elementoActivo, setElementoActivo] = useState(0);
+    const [anterior, setAnterior] = useState(pokemones.length - 1);
+    const [siguiente, setSiguiente] = useState(elementoActivo + 1);
+
+    useEffect(() => {
+        if (elementoActivo === 0) {
+            setAnterior(pokemones.length - 1);
+            setSiguiente(elementoActivo + 1);
+        } else if (elementoActivo === pokemones.length - 1) {
+            setAnterior(elementoActivo - 1);
+            setSiguiente(0);
+        } else {
+            setAnterior(elementoActivo - 1);
+            setSiguiente(elementoActivo + 1);
+        }
+    }, [elementoActivo]); */
+
+
     return (
         <div id="windowDetail" className={`${pokemon?.tipo[0]}`}>
             <div className="pokeball"><img src="/images/Pokeball.png" alt="pokeball" /></div>
@@ -74,26 +92,24 @@ function Details() {
                     </div>
                 </div>
                 <div className="profile">
-
-                    <Link to={`/Details/${pokemon?.id}`}>
+                    {/*  <Link to={`/Details/${anterior}`}>
                         <div>
-                            <img src="/images/chevron-left.svg" alt="izquierda" />
+                            <button><img src="/images/chevron-left.svg" alt="izquierda" /></button>
                         </div>
-                    </Link>
+                    </Link> */}
                     <div>
                         <img src={pokemon?.imagen} alt={pokemon?.nombre} />
                     </div>
-                    <Link to={`/Details/${pokemon?.id}`}>
+                    {/* <Link to={`/Details/${siguiente}`}>
                         <div>
-                            <img src="/images/chevron-right.svg" alt="derecha" />
+                            <button><img src="/images/chevron-right.svg" alt="derecha" /></button>
                         </div>
-                    </Link>
-
+                    </Link> */}
                 </div>
                 <div className="types">
-                    {pokemon?.tipo.map((item) => {
+                    {pokemon?.tipo.map((item, index) => {
                         return (
-                            <div id="type" className={`${pokemon?.tipo[0]} ${pokemon?.tipo[1]}`}>
+                            <div id="type" className={`${pokemon?.tipo[index]}`}>
                                 <label>{item}</label>
                             </div>
                         );
@@ -102,27 +118,31 @@ function Details() {
                 <div className="about">
                     <h3 className={'id' + `${pokemon?.tipo[0]}`}>About</h3>
                     <div className="resume">
-                        <div className="weight">
-                            <div><img src="/images/Weight.svg" alt="peso" /></div>
-                            <div><p>{pokemon?.peso}</p></div>
-                            <div><span>Weight</span></div>
+                        <div className="weight alinear">
+                            <div className="dato">
+                                <img src="/images/Weight.svg" alt="peso" />
+                                <p>{pokemon?.peso}</p>
+                            </div>
+                            <span>Weight</span>
                         </div>
                         <div className="line1"></div>
-                        <div className="height">
-                            <div><img src="/images/Height.svg" alt="altura" /></div>
-                            <div><p>{pokemon?.altura}</p></div>
-                            <div><span>Height</span></div>
+                        <div className="height alinear">
+                            <div className="dato">
+                                <img src="/images/Height.svg" alt="altura" />
+                                <p>{pokemon?.altura}</p>
+                            </div>
+                            <span>Height</span>
                         </div>
                         <div className="line1"></div>
                         <div className="moves">
                             {pokemon?.movimientos.map((item) => {
                                 return (
                                     <>
-                                        <div><p>{item}</p></div>
+                                        <div className="dato"><p>{item}</p></div>
                                     </>
                                 );
                             })}
-                            <div><span>Moves</span></div>
+                            <span>Moves</span>
                         </div>
                     </div>
                 </div>

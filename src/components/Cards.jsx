@@ -9,17 +9,17 @@ function Cards(props) {
 
     return (
         <div className="window card-grid">
-            {props.pokemones.map((pokemonCard) => {
+            {props.pokemones?.map((pokemon) => {
                 return (
-                    <div name="card" id="card" className={`${pokemonCard.tipo[0]}`} >
-                        <Link className="enlace" to={`/Details/${pokemonCard.id}`}>
+                    <div name="card" id="card" className={`${pokemon?.tipo[0]}`} >
+                        <Link className="enlace" to={`/Details/${pokemon?.id}`}>
                             <div className="containerwhite">
-                                <div className="pokemonid"><h3 className={'id' + `${pokemonCard.tipo[0]}`}>#{pokemonCard.id}</h3></div>
+                                <div className="pokemonid"><h3 className={'id' + `${pokemon?.tipo[0]}`}>#{pokemon?.id}</h3></div>
 
-                                <div><img className="picture" src={pokemonCard.imagen} alt={pokemonCard.nombre} /></div>
+                                <div><img className="picture" src={pokemon?.imagen} alt={pokemon?.nombre} /></div>
                             </div>
                             <div className="containercolor">
-                                <div><h2>{pokemonCard.nombre}</h2></div>
+                                <div><h2>{pokemon?.nombre}</h2></div>
                             </div>
                         </Link>
                     </div>

@@ -4,28 +4,11 @@ import "./App.css";
 import Search from "./components/Search";
 import Cards from "./components/Cards";
 
-
 function App() {
 
   const [pokemones, setPokemones] = useState([])
 
   const [flag, setFlag] = useState(false)
-
-  const buscar = (nombre) => {
-    if (nombre == "") {
-      setFlag(!flag)
-    }
-    else {
-      let pokemon = pokemones.map((pokemon) => {
-        return pokemon.nombre.toLowerCase().includes(nombre.toLowerCase());
-      });
-      setPokemones(pokemon)
-    }
-  }
-
-  useEffect(() => {
-    callApi()
-  }, [flag]);
 
   const callApi = () => {
     fetch("http://localhost:3000/pokemones", {
@@ -34,6 +17,22 @@ function App() {
       .then((response) => response.json())
       .then((response) => setPokemones(response))
       .catch((err) => console.error(err));
+  }
+
+  useEffect(() => {
+    callApi()
+  }, [flag]);
+
+  const buscar = (nombre) => {
+    if (nombre == "") {
+      setFlag(!flag)
+    }
+    else {
+      let pokemon = pokemones.filter((pokemon) => {
+        return pokemon.nombre.toLowerCase().includes(nombre.toLowerCase());
+      });
+      setPokemones(pokemon)
+    }
   }
 
   const sortAB = () => {
